@@ -1,3 +1,4 @@
 [submodule "Flask_HelloWolrd"]
     path = flask_hello
     url = https://github.com/JohanValero/Flask_HelloWorld_GCP.git
+    branch = main
