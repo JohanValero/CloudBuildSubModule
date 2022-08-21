@@ -15,7 +15,7 @@ steps:
   args:
   - clone
   - --recurse-submodules
-  - git@github.com:JohanValero/CloudBuildSubModule
+  - git@github.com:JohanValero/Flask_HelloWorld_GCP.git
   volumes:
   - name: 'ssh'
     path: /root/.ssh
