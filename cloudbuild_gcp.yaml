@@ -19,5 +19,5 @@ steps:
     path: /root/.ssh
 availableSecrets:
   secretManager:
-  - versionName: projects/${PROJECT_ID}/secrets/secret-git/versions/latest
+  - versionName: projects/16641413854/secrets/secret-git/versions/1
     env: 'SSH_KEY'
