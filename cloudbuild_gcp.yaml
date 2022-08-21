@@ -1,5 +1,4 @@
 steps:
-steps:
 - name: 'gcr.io/cloud-builders/git'
   secretEnv: ['SSH_KEY']
   entrypoint: 'bash'
@@ -13,11 +12,14 @@ steps:
   - name: 'ssh'
     path: /root/.ssh
 - name: 'gcr.io/cloud-builders/git'
-  args: ['clone', '--recurse-submodules', 'git@github.com:JohanValero/Flask_HelloWorld_GCP']
+  args:
+  - clone
+  - --recurse-submodules
+  - git@github.com:JohanValero/CloudBuildSubModule
   volumes:
   - name: 'ssh'
     path: /root/.ssh
 availableSecrets:
   secretManager:
-  - versionName: projects/16641413854/secrets/secret-git/versions/1
+  - versionName: projects/16641413854/secrets/secret-git/versions/2
     env: 'SSH_KEY'
