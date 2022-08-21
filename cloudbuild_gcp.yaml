@@ -5,7 +5,7 @@ steps:
   args:
   - -c
   - |
-    echo ${_SSH_KEY_JV} >> /root/.ssh/id_rsa
+    echo "${_SSH_KEY_JV}" >> /root/.ssh/id_rsa
     chmod 400 /root/.ssh/id_rsa
   volumes:
   - name: 'ssh'
