@@ -1,4 +1,6 @@
 steps:
+- name: 'gcr.io/cloud-builders/git'
+  args: ['submodule', 'update', '--init', '--recursive', '--remote']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'us-central1-docker.pkg.dev/${PROJECT_ID}/flask-app-demo/flask_app', '.']
 - name: 'gcr.io/cloud-builders/docker'
