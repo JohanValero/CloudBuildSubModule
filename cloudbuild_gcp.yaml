@@ -19,6 +19,17 @@ steps:
   volumes:
   - name: 'ssh'
     path: /root/.ssh
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'us-central1-docker.pkg.dev/${PROJECT_ID}/flask-app-demo/flask_app', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'us-central1-docker.pkg.dev/${PROJECT_ID}/flask-app-demo/flask_app']
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args: [
+    'run',
+    'deploy', 'flask-app-demo',
+    '--image', 'us-central1-docker.pkg.dev/${PROJECT_ID}/flask-app-demo/flask_app',
+    '--region', 'us-central1']
 availableSecrets:
   secretManager:
   - versionName: projects/16641413854/secrets/secret-git/versions/2
