@@ -49,5 +49,5 @@ availableSecrets:
   secretManager:
   - versionName: projects/16641413854/secrets/secret-git/versions/2
     env: 'SSH_KEY'
-  - versionName: projects/16641413854/secrets/flask_hello_env/versions/3
+  - versionName: projects/16641413854/secrets/flask_hello_env/versions/lastest
     env: 'ENV_FILE'
