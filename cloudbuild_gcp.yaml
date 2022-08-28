@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/git'
-  secretEnv: ['SSH_KEY']
+  secretEnv: ['ENV_FILE']
   entrypoint: 'bash'
   args:
   - -c
@@ -9,9 +9,9 @@ steps:
     chmod 400 /root/env_folder/.env
   volumes:
   - name: 'ssh'
-    path: /root/.ssh
+    path: /root/env_folder
 - name: 'gcr.io/cloud-builders/git'
-  secretEnv: ['ENV_FILE']
+  secretEnv: ['SSH_KEY']
   entrypoint: 'bash'
   args:
   - -c
