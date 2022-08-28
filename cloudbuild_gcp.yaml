@@ -11,7 +11,7 @@ steps:
   - name: 'ssh'
     path: /root/.ssh
 - name: 'gcr.io/cloud-builders/git'
-  secretEnv: ['SSH_KEY']
+  secretEnv: ['ENV_FILE']
   entrypoint: 'bash'
   args:
   - -c
