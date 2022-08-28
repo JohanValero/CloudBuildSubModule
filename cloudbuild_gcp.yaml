@@ -40,7 +40,11 @@ steps:
     'run',
     'deploy', 'flask-app-demo',
     '--image', 'us-central1-docker.pkg.dev/${PROJECT_ID}/flask-app-demo/flask_app',
-    '--region', 'us-central1']
+    '--region', 'us-central1',
+    '--env-vars-file', '/root/env_folder/.env']
+  volumes:
+  - name: 'ssh'
+    path: /root/env_folder
 availableSecrets:
   secretManager:
   - versionName: projects/16641413854/secrets/secret-git/versions/2
