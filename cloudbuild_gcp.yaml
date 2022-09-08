@@ -25,7 +25,8 @@ steps:
 - name: 'gcr.io/cloud-builders/git'
   args:
   - clone
-  - -b develop
+  - -b
+  - develop
   - --recurse-submodules
   - git@github.com:JohanValero/Flask_HelloWorld_GCP.git
   volumes:
