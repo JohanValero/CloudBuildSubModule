@@ -27,8 +27,7 @@ steps:
   - clone
   - --recurse-submodules
   - git@github.com:JohanValero/Flask_HelloWorld_GCP.git
-  - b
-  - develop
+  - b develop
   volumes:
   - name: 'ssh'
     path: /root/.ssh
